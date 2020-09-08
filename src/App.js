@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import datas from './datas'
 
+import Icon from './Icon'
 function App() {
+  const icons = datas.map(item =>
+    <Icon
+      icon={item.icon}
+      name={item.name}
+      color={item.color}
+    />
+  )
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="icons-container">
+        {icons}
+      </div>
     </div>
   );
 }
